@@ -12,7 +12,7 @@ import static org.junit.jupiter.api.Assertions.fail;
 public class MainTest {
 
     @Test
-    public void recPowHandleAllTypesOfDataInput() {
+    public void recPowHandleAllTypesOfInput() {
         Main tester = new Main();
 
         try {

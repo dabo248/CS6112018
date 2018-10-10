@@ -82,5 +82,13 @@ public class Main {
 
         // question 4
         System.out.println(recPow(30));
+
+        // question 5
+        int[] array = {2, 24, 6, 123, 82, 81, 9, 12, -3};
+        MergeSort.mergeSort(array);
+
+        for (int a: array) {
+            System.out.println(a);
+        }
     }
 }
