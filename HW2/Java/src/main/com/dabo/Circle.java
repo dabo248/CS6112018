@@ -1,4 +1,4 @@
-package com.dabo;
+package main.com.dabo;
 
 import java.awt.*;
 

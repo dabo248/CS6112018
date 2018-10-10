@@ -1,4 +1,4 @@
-package com.dabo;
+package main.com.dabo;
 
 import java.awt.*;
 
@@ -37,6 +37,16 @@ public class Main {
         }
     }
 
+    public static int recPow(int n) {
+        if (n < 0 || n > 30) {
+            throw new IllegalArgumentException("n has to be >= 0 and <= 30");
+        } else if (n == 0) {
+            return 1;
+        } else {
+            return 2 * recPow(n - 1);
+        }
+    }
+
     public static void main(String[] args) {
 	    // write your code here
         System.out.println("Hello World");
@@ -69,5 +79,8 @@ public class Main {
         int tail_recursive_result = smallest_tail_recursive_function(10);
 
         System.out.println(tail_recursive_result);
+
+        // question 4
+        System.out.println(recPow(30));
     }
 }

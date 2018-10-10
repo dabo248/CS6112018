@@ -1,4 +1,4 @@
-package com.dabo;
+package main.com.dabo;
 
 /**
  * Created by D4VE on 8/10/18.
