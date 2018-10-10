@@ -47,9 +47,19 @@ public class Main {
         }
     }
 
+    public static int gcd(int n,int m) {
+        if (m == n) {
+            return m;
+        } else if (m > n) {
+            return gcd(m - n, n);
+        } else {
+            return gcd(m, n - m);
+        }
+    }
+
     public static void main(String[] args) {
 	    // write your code here
-        System.out.println("Hello World");
+        System.out.println("Hello World \n");
 
         // question 1, a
         Circle circle = new Circle();
@@ -66,6 +76,8 @@ public class Main {
         circle = colored_circle;
         circle.draw();
 
+        System.out.println();
+
         // question 2, c
         int i = 5;
         i = i + 5;
@@ -73,15 +85,15 @@ public class Main {
         // question 2, e
         int factorial_result = fact(7);
 
-        System.out.println(factorial_result);
+        System.out.println(factorial_result + "\n");
 
         // question 2, f
         int tail_recursive_result = smallest_tail_recursive_function(10);
 
-        System.out.println(tail_recursive_result);
+        System.out.println(tail_recursive_result + "\n");
 
         // question 4
-        System.out.println(recPow(30));
+        System.out.println(recPow(30) + "\n");
 
         // question 5
         int[] array = {2, 24, 6, 123, 82, 81, 9, 12, -3};
@@ -90,5 +102,11 @@ public class Main {
         for (int a: array) {
             System.out.println(a);
         }
+        System.out.println();
+
+        // question 6
+        int gcd_result = gcd(18, 6);
+
+        System.out.println(gcd_result + "\n");
     }
 }
