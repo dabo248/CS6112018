@@ -39,6 +39,7 @@ public class TokenStream {
 	}
 
 	public Token nextToken() { // Return next token type and value.
+
 		Token t = new Token();
 		t.setType("Other");
 		t.setValue("");
@@ -82,7 +83,7 @@ public class TokenStream {
 
 		// Then check for an operator; recover 2-character operators
 		// as well as 1-character ones.
-		if (isOperator(nextChar) || nextChar == '&') {
+		if (isOperator(nextChar) || nextChar == '&' || nextChar == '|') {
 			t.setType("Operator");
 			t.setValue(t.getValue() + nextChar);
 			switch (nextChar) {
@@ -108,6 +109,16 @@ public class TokenStream {
 			case '&': // look for the AND operator, &&
 				nextChar = readChar();
 				if (nextChar == '&') {
+					t.setValue(t.getValue() + nextChar);
+					nextChar = readChar();
+				} else {
+					t.setType("Other");
+				}
+
+				return t;
+			case '|':
+				nextChar = readChar();
+				if (nextChar == '|') {
 					t.setValue(t.getValue() + nextChar);
 					nextChar = readChar();
 				} else {
@@ -245,7 +256,7 @@ public class TokenStream {
 	}
 
 	private boolean isOperator(char c) {
-		if (c == '=' || c == '+' || c == '-' || c == '*' || c == '/' || c == '<' || c == '>' || c == '!' || c == '|') {
+		if (c == '=' || c == '+' || c == '-' || c == '*' || c == '/' || c == '<' || c == '>' || c == '!') {
 		    return true;
         }
 
